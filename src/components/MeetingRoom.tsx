@@ -49,11 +49,8 @@ function MeetingRoom() {
           maxSize={100}
           className="relative"
         >
-          {/* VIDEO LAYOUT */}
           <div className="absolute inset-0">
             {layout === 'grid' ? <PaginatedGridLayout /> : <SpeakerLayout />}
-
-            {/* PARTICIPANTS LIST OVERLAY */}
             {showParticipants && (
               <div className="absolute right-0 top-0 h-full w-[300px] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <CallParticipantsList
@@ -62,9 +59,6 @@ function MeetingRoom() {
               </div>
             )}
           </div>
-
-          {/* VIDEO CONTROLS */}
-
           <div className="absolute bottom-4 left-0 right-0">
             <div className="flex flex-col items-center gap-4">
               <div className="flex items-center gap-2 flex-wrap justify-center px-4">
@@ -86,7 +80,6 @@ function MeetingRoom() {
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
-
                   <Button
                     variant="outline"
                     size="icon"
@@ -102,9 +95,7 @@ function MeetingRoom() {
             </div>
           </div>
         </ResizablePanel>
-
         <ResizableHandle withHandle />
-
         <ResizablePanel defaultSize={65} minSize={25}>
           <CodeEditor />
         </ResizablePanel>
