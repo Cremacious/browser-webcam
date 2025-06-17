@@ -15,9 +15,7 @@ import MeetingCard from '@/components/MeetingCard';
 export default function Home() {
   const router = useRouter();
 
-  const isInterviewer = true;
-
-  const { isLoading } = useUserRole();
+  const { isLoading, isInterviewer } = useUserRole();
   const interviews = useQuery(api.interviews.getMyInterviews);
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState<'start' | 'join'>();
