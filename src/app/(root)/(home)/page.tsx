@@ -11,9 +11,12 @@ import MeetingModal from '@/components/MeetingModal';
 import LoaderUI from '@/components/LoaderUI';
 import { Loader2Icon } from 'lucide-react';
 import MeetingCard from '@/components/MeetingCard';
+import { useUser } from '@clerk/nextjs';
 
 export default function Home() {
   const router = useRouter();
+  const { user } = useUser();
+  console.log('User:', user);
 
   const { isLoading, isInterviewer } = useUserRole();
   const interviews = useQuery(api.interviews.getMyInterviews);
